@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+zuul:
+  routes:
+    users:
+      path: /it/**
+      url: http://127.0.0.1:6080
+    users2:
+      path: /it2/**
+      url: http://youku.com/
+    abc:  #让zuul方向代理微服务，路径是/user-path  abc只要是唯一的就行，可随意写  
+      path: /user-path/**  #封层匹配  
+      serviceId: spring-cloud-producer
+      
+      
+      
