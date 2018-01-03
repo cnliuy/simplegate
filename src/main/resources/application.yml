@@ -8,7 +8,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://127.0.0.1:8001/eureka/    
+      defaultZone: http://127.0.0.1:8001/eureka/   #eureka服务中心地址 
 
 zuul:
   routes:
@@ -20,7 +20,7 @@ zuul:
       url: http://youku.com/
     abc:  #让zuul方向代理微服务，路径是/user-path  abc只要是唯一的就行，可随意写  
       path: /user-path/**  #封层匹配  
-      serviceId: spring-cloud-producer
+      serviceId: spring-cloud-producer  #eureka中心上的服务的id
       
       
       
